@@ -1,4 +1,4 @@
-package myPack;
+package myPack.wcWithMyExeption;
 import java.util.Scanner;
 
 public class CalculatorWithSwitch {

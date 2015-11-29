@@ -1,4 +1,4 @@
-package myPack;
+package myPack.wcWithMyExeption;
 
 import java.util.Scanner; 
 import java.io.*;
@@ -15,13 +15,19 @@ class WorkingComputer {
 		
 		switch (sc.nextInt()) {
             case 1:
-            	Computer.powerSwitch(1);
             	//pc1 = new Computer(300,1024,"Asus","Gygabyte");
+            	//pc1.powerSwitch(1);
         		//System.out.println("Computer starts anh have parameters: " + pc1.toString());
-				installOS();
+        		if(pc1!=null) {
+				WorkingComputer comp = new WorkingComputer();
+				comp.installOS();
+        		}else {
+        			 throw new ComputerAccessException("”You can't use this program because computer is off”");
+                }
                 break;
             case 2:
-            	Computer.powerSwitch(2);
+            	pc1 = new Computer(300,1024,"Asus","Gygabyte");
+            	pc1.powerSwitch(2);
                 break;
             default: 
                 System.out.println("You choise is wrong, please enter 1 or 2");
@@ -30,7 +36,7 @@ class WorkingComputer {
         }
     }
 
-	static void installOS()throws Exception{
+	void installOS()throws Exception{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("--------------------------------------------------");
 		System.out.println(" If you Want install OS please enter 1, if not - 2 ");

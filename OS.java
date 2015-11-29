@@ -1,4 +1,4 @@
-package myPack;
+package myPack.wcWithMyExeption;
 import java.util.Scanner;
 
 public class OS {
@@ -12,11 +12,16 @@ public class OS {
 		switch (sc.nextInt()) {
             case 1:
                 System.out.println("-- OS started");
-                workWithCalculatorAndFileManager();
+                try{
+                	workWithCalculatorAndFileManager();
+                }catch (ComputerAccessException me1) {
+                	System.err.print(me1);
+				}
                 break;
             case 2:
                 System.out.println("-- OS not started");
-				WorkingComputer.turnOn();
+				WorkingComputer comp = new WorkingComputer();
+				comp.turnOn();
                 break;
             default: 
                 System.out.println("You choise is wrong, please enter 1 or 2");
@@ -34,11 +39,7 @@ public class OS {
 		switch (sc.nextInt()) {
         case 1:
             CalculatorWithSwitch runCalc = new CalculatorWithSwitch();
-            if(WorkingComputer.pc1==null) {
-            	throw new ComputerAccessException();
-            } else {
-            runCalc.workCalc();
-            }
+            	runCalc.workCalc();
             break;
         case 2:
             try {

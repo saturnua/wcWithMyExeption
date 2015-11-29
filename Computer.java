@@ -1,4 +1,4 @@
-package myPack;
+package myPack.wcWithMyExeption;
 
 public class Computer {
 	int powerSuply;   
@@ -15,7 +15,7 @@ public class Computer {
 	}
 	
 	
-	static void powerSwitch(int state){  //state - состояние выключателя
+	void powerSwitch(int state){  //state - состояние выключателя
 			if(state == 1){
 				System.out.println("Switch turn on");
 			}

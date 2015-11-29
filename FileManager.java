@@ -1,4 +1,4 @@
-package myPack;
+package myPack.wcWithMyExeption;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
